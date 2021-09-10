@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import reducer,{initialState} from "./reducer";
+import {StateProvider} from "./StateProvider";
 
 ReactDOM.render(
   <React.StrictMode>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      {/* App is the children in contect api */}
     <App />
+    </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
